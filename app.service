@@ -1,0 +1,14 @@
+[Unit]
+Description=Affiche Hello KONDI CODE
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/ua-app
+ExecStart=/usr/bin/python3 manage.py runserver
+
+Type=simple
+User=amk
+Group=amk
+
+[Install]
+WantedBy=default.target
