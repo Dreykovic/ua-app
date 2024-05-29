@@ -16,3 +16,14 @@ pip install -r requirements.txt
 a2ensite caert.egotransfert.com.conf 
 a2dissite 000-default.conf 
 systemctl restart apache2
+
+
+
+git pull
+cp app.service /etc/systemd/system/caert.service 
+systemctl status caert.service 
+systemctl stop caert.service 
+systemctl daemon-reload
+systemctl stop caert.service 
+systemctl start caert.service 
+systemctl status caert.service 
