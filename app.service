@@ -7,8 +7,8 @@ WorkingDirectory=/var/www/ua-app
 ExecStart=/usr/bin/python3 manage.py runserver
 
 Type=simple
-User=amk
-Group=amk
+User=root
+Group=root
 
 [Install]
 WantedBy=default.target
