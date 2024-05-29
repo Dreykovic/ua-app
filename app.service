@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/var/www/ua-app
-ExecStart=/var/www/ua-app/venv/bin/gunicorn wsgi:application
+ExecStart=/var/www/ua-app/venv/bin/gunicorn ua/wsgi:application
 
 Type=simple
 User=root
