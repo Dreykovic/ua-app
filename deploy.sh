@@ -1,6 +1,4 @@
-sudo apt install apache2 apache2-utils libexpat1 python3 python3-dev libapache3-mod-wsgi-py3
-sudo apt install apache2 apache2-utils libexpat1 python3 python3-dev libapache-mod-wsgi-py3
- sudo apt install apache2 apache2-utils libexpat1 python3 python3-dev libapache2-mod-wsgi-py3
+sudo apt install apache2 apache2-utils libexpat1 python3 python3-dev libapache2-mod-wsgi-py3
 cd /var/www/
 git clone https://github.com/Dreykovic/ua-app.git
 cp ua-app/ua.conf /etc/apache2/sites-available/ua.conf
