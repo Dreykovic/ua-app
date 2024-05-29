@@ -1,7 +1,6 @@
 #Listen 82
 <VirtualHost *:80>
        
-        ServerName caert.egotransfert.com  # Ajoutez cette ligne pour définir le nom de domaine
 
         DocumentRoot /var/www/ua-app
         
