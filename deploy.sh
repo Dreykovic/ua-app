@@ -30,9 +30,9 @@ systemctl status caert.service
 
 
 echo "<VirtualHost *:80>
-    # ServerAdmin admin@example.com
-    # ServerName yourdomain.com
-    # ServerAlias www.yourdomain.com
+    ServerAdmin dreybirewa@gmail.com
+    ServerName egotransfert.com
+    ServerAlias www.egotransfert.com
 
     DocumentRoot /var/www/ua-app
 
@@ -52,9 +52,9 @@ echo "<VirtualHost *:80>
         </Files>
     </Directory>
 
-    WSGIDaemonProcess ua-app python-path=/var/www/ua-app python-home=/var/www/ua-app/venv
-    WSGIProcessGroup ua-app
-    WSGIScriptAlias / /var/www/ua-app/ua/wsgi.py
+    WSGIDaemonProcess caert user=www-data group=www-data threads=2 python-path=/var/www/ua-app python-home=/var/www/ua-app/venv
+    WSGIProcessGroup caert
+    WSGIScriptAlias / /var/www/ua-app/ua/wsgi.py application-group=%{GLOBAL}
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
