@@ -27,3 +27,36 @@ systemctl daemon-reload
 systemctl stop caert.service 
 systemctl start caert.service 
 systemctl status caert.service 
+
+
+echo "<VirtualHost *:80>
+    # ServerAdmin admin@example.com
+    # ServerName yourdomain.com
+    # ServerAlias www.yourdomain.com
+
+    DocumentRoot /var/www/ua-app
+
+    Alias /static /var/www/ua-app/static
+    <Directory /var/www/ua-app/static>
+        Require all granted
+    </Directory>
+
+    Alias /media /var/www/ua-app/media
+    <Directory /var/www/ua-app/media>
+        Require all granted
+    </Directory>
+
+    <Directory /var/www/ua-app/ua>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+    WSGIDaemonProcess ua-app python-path=/var/www/ua-app python-home=/var/www/ua-app/venv
+    WSGIProcessGroup ua-app
+    WSGIScriptAlias / /var/www/ua-app/ua/wsgi.py
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+" > /etc/apache2/sites-available/ua.conf
