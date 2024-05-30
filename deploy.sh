@@ -60,3 +60,19 @@ echo "<VirtualHost *:80>
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 " > /etc/apache2/sites-available/ua.conf
+
+
+echo "[Unit]
+Description=AMONA Audrey Birewa Audrey
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/ua-app
+ExecStart=/var/www/ua-app/venv/bin/gunicorn -w 4 --bind 0.0.0.0:8000 ua.wsgi:application
+
+Type=simple
+User=root
+Group=root
+
+[Install]
+WantedBy=default.target" > /systemd/system/caert.service
