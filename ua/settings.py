@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-)b-(j^*ea#+%i)ugso#&5e4$vq@tip0&4!7jo(lhjjgyr3u$y0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['213.130.147.64', 'egotransfert.com']
+ALLOWED_HOSTS = ['213.130.147.64', 'ua.egotransfert.com']
 
 
 # Application definition
