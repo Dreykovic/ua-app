@@ -1,6 +1,6 @@
 from collections import UserList
 from multiprocessing import AuthenticationError
-from tkinter.ttk import Entry
+#from tkinter.ttk import Entry
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -85,17 +85,17 @@ def recherchenformation(lettres):
     return Response(InformationSerializer(informations))  
 
 
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def research_information():
-    recherche = Entry.get()
-    conn = sqlite3.connect('sqlite3.db')
-    cursor = conn.cursor()
-    informations=cursor.execute("SELECT * FROM information WHERE title LIKE ?", ('%' + recherche + '%',))
-    resultats = cursor.fetchall()
-    conn.close()
-    serializer = InformationSerializer(informations,many=True)
-    return Response(serializer.data)
+# @api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+# def research_information():
+#     recherche = Entry.get()
+#     conn = sqlite3.connect('sqlite3.db')
+#     cursor = conn.cursor()
+#     informations=cursor.execute("SELECT * FROM information WHERE title LIKE ?", ('%' + recherche + '%',))
+#     resultats = cursor.fetchall()
+#     conn.close()
+#     serializer = InformationSerializer(informations,many=True)
+#     return Response(serializer.data)
 
  
     
