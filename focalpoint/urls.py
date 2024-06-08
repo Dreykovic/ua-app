@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from .views import (
-       get_informations,index, listePointFocal,research_information
+       get_informations,index, listePointFocal
     )
 
 from rest_framework_simplejwt.views import (
@@ -19,7 +19,7 @@ urlpatterns = [
     # Api
     path('api-auth/', include('rest_framework.urls')),
     path('api-informations/', get_informations, name='api-informations'),
-    path('api-recherche/', research_information, name='api-recherche'),
+    ##path('api-recherche/', research_information, name='api-recherche'),
 
 ]
 
